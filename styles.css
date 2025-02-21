@@ -1,240 +1,249 @@
-
 /* General Styles */
+:root {
+    --primary: #ff6b6b;
+    --secondary: #4ecdc4;
+    --dark: #2d3436;
+    --light: #f9f9f9;
+    --gradient: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: var(--light);
+    color: var(--dark);
     line-height: 1.6;
-    color: #fff; /* White text for dark mode */
-    background-color: #121212; /* Dark Gray */
-  }
-  
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Header */
-  header {
-    background: #2C2C2C; /* Light Gray */
-    color: #fff;
-    padding: 15px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  header h1 {
-    margin: 0;
-    display: inline;
-    font-size: 1.8em;
-    color: #00BFFF; /* Electric Blue */
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    color: #fff;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+nav .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--light);
     text-decoration: none;
-    font-size: 1.1em;
+}
+
+nav .logo span {
+    color: var(--primary);
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+nav .nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    font-size: 16px;
     transition: color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    color: #00BFFF; /* Electric Blue on hover */
-  }
-  
-  /* Hero Section */
-  .hero {
-    background: #2C2C2C; /* Light Gray */
-    color: #fff;
-    padding: 100px 0;
+}
+
+nav .nav-links a:hover {
+    color: var(--primary);
+}
+
+nav .icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Header */
+.header {
     text-align: center;
-  }
-  
-  .hero h2 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #00BFFF; /* Electric Blue */
-  }
-  
-  .hero p {
-    font-size: 1.2em;
+    padding: 150px 20px;
+    background: var(--gradient);
+    color: var(--light);
+}
+
+.header h1 {
+    font-size: 56px;
     margin-bottom: 20px;
-  }
-  
-  .hero .btn {
-    background: #00BFFF; /* Electric Blue */
-    color: #121212; /* Dark Gray */
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: background 0.3s ease;
-  }
-  
-  .hero .btn:hover {
-    background: #FFD700; /* Bright Yellow on hover */
-    color: #121212; /* Dark Gray */
-  }
-  
-  /* Services Section */
-  .services {
-    padding: 60px 0;
-    text-align: center;
-  }
-  
-  .services h2 {
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 20px;
     margin-bottom: 40px;
-    font-size: 2em;
-    color: #00BFFF; /* Electric Blue */
-  }
-  
-  .service-list {
+    color: var(--light);
+}
+
+.cta-button {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* Services */
+.services {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .service-item {
-    flex: 1 1 30%;
-    margin: 10px;
-    padding: 20px;
-    background: #2C2C2C; /* Light Gray */
-    border-radius: 10px;
-    box-sizing: border-box;
+    justify-content: center;
+    gap: 25px;
+    padding: 60px 20px;
+    background-color: var(--light);
+}
+
+.service-card {
+    background-color: var(--light);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .service-item:hover {
+}
+
+.service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .service-item h3 {
-    font-size: 1.5em;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon {
+    font-size: 56px;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.service-card h3 {
+    font-size: 24px;
     margin-bottom: 10px;
-    color: #FFD700; /* Bright Yellow */
-  }
-  
-  .service-item p {
-    font-size: 1em;
-    color: #fff;
-  }
-  
-  /* About Section */
-  .about {
-    padding: 60px 0;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Features */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 60px 20px;
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.feature-card {
     text-align: center;
-    background: #2C2C2C; /* Light Gray */
-  }
-  
-  .about h2 {
-    font-size: 2em;
+    width: 300px;
+    background-color: var(--dark);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon {
+    font-size: 56px;
     margin-bottom: 20px;
-    color: #00BFFF; /* Electric Blue */
-  }
-  
-  .about p {
-    font-size: 1.1em;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #fff;
-  }
-  
-  /* Contact Section */
-  .contact {
-    padding: 60px 0;
-    text-align: center;
-  }
-  
-  .contact h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #00BFFF; /* Electric Blue */
-  }
-  
-  .contact p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-    color: #fff;
-  }
-  
-  .whatsapp-btn {
-    display: inline-flex;
-    align-items: center;
-    background: #25D366; /* WhatsApp Green */
-    color: #fff;
-    padding: 12px 24px;
+    color: var(--primary);
+}
+
+.feature-card h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: var(--light);
+}
+
+/* WhatsApp Float */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: white;
+    padding: 18px;
+    border-radius: 50%;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    transition: background 0.3s ease;
-  }
-  
-  .whatsapp-btn:hover {
-    background: #128C7E; /* Darker WhatsApp Green */
-  }
-  
-  .whatsapp-icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-  }
-  
-  /* Footer */
-  footer {
-    background: #2C2C2C; /* Light Gray */
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
-  }
-  
-  footer p {
-    margin: 0;
-    font-size: 0.9em;
-  }
-  
-  /* Media Queries for Responsiveness */
-  @media (max-width: 768px) {
-    .service-item {
-      flex: 1 1 45%;
+    font-size: 28px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: var(--dark);
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
     }
-  
-    .hero h2 {
-      font-size: 2em;
+
+    nav .nav-links.responsive {
+        display: flex;
     }
-  
-    .hero p {
-      font-size: 1em;
+
+    nav .icon {
+        display: block;
     }
-  }
-  
-  @media (max-width: 480px) {
-    .service-item {
-      flex: 1 1 100%;
+
+    .header h1 {
+        font-size: 40px;
     }
-  
-    nav ul li {
-      display: block;
-      margin: 10px 0;
+
+    .header p {
+        font-size: 18px;
     }
-  
-    .hero h2 {
-      font-size: 1.8em;
+
+    .services, .features {
+        flex-direction: column;
+        align-items: center;
     }
-  
-    .hero p {
-      font-size: 0.9em;
-    }
-  }
+}
